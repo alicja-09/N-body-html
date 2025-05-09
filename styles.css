@@ -1,9 +1,8 @@
 body {
-    font-family: Cambria, sans-serif; /* Prosta czcionka */
-    background-color: #09092a; /* granatowe tło */
-    color: #d2d1d9; /* Ciemny tekst */
+    background-color: #110d48;
+    overflow: hidden;
+    margin: 0;
 }
-
 .container {
     display: flex; /* Flexbox dla wyśrodkowania */
     flex-direction: column; /* Elementy w pionie */
