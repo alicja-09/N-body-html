@@ -12,41 +12,97 @@
             margin: 0 auto;
             padding: 20px;
             color: #dcdce2;
-            background-color: #061734;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
+        
+        /* Enhanced Night Sky */
+        #night-sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+         background: #11033c;
+}
+        
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6);
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
+        }
+        
+        /* Brighter twinkling animation */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.7); }
+            50% { opacity: var(--opacity); transform: scale(1.2); }
+        }
+        
+        /* Bigger stars */
+        .star.big {
+            width: 3px !important;
+            height: 3px !important;
+            box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.8);
+            animation: twinkleBig var(--duration) infinite ease-in-out;
+        }
+        
+        @keyframes twinkleBig {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+        
+        .container {
+            background-color: rgba(6, 23, 52, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(182, 209, 227, 0.2);
+            margin: 20px auto;
+        }
+        
+        /* Rest of your styles... */
         h1 {
             color: #adcded;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
+        
         h2 {
             color: #d1e2ed;
         }
+        
         a {
             color: #b6d1e3;
             text-decoration: none;
         }
+        
         a:hover {
             text-decoration: underline;
+            color: #e3f2ff;
         }
+        
         ul {
             padding-left: 20px;
         }
-        .container {
-            background-color: #021a43;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        
         .examples {
             margin-top: 20px;
             padding: 15px;
-            background-color: #061734;
+            background-color: rgba(6, 23, 52, 0.6);
             border-left: 4px solid #b6d1e3;
         }
     </style>
 </head>
 <body>
+    <div id="night-sky"></div>
+    
     <div class="container">
         <h1>N-body Problem</h1>
         
@@ -73,7 +129,128 @@
             </ul>
         </div>
     </div>
-      <br>
+<br>
         <p>Projekt zrealizowany przy pomocy sztucznej inteligencji, na potrzeby warsztatów "Fizyka to mnie fascynuje" 2025.</p>
+
+    <script>
+        // Create enhanced twinkling stars
+        const nightSky = document.getElementById('night-sky');
+        const starCount = 300; // Increased from 150 to 300
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random properties for each star
+            const size = Math.random() * 3;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const opacity = Math.random() * 0.7 + 0.3; // Increased minimum opacity
+            const duration = Math.random() * 4 + 2;
+            
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${posX}%`;
+            star.style.top = `${posY}%`;
+            star.style.setProperty('--opacity', opacity);
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            // Make 10% of stars bigger and brighter
+            if (Math.random() > 0.9) {
+                star.classList.add('big');
+                star.style.setProperty('--opacity', '1');
+            }
+            
+            // Delay the animation start randomly
+            star.style.animationDelay = `${Math.random() * 10}s`;
+            
+            nightSky.appendChild(star);
+        }
+        
+        // Enhanced shooting stars
+        function createShootingStar() {
+            const shootingStar = document.createElement('div');
+            shootingStar.style.position = 'absolute';
+            shootingStar.style.width = '150px'; // Longer trail
+            shootingStar.style.height = '2px';
+            shootingStar.style.background = 'linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0))';
+            shootingStar.style.borderRadius = '50%';
+            shootingStar.style.filter = 'blur(1.5px)';
+            shootingStar.style.zIndex = '1';
+            
+            const startX = Math.random() * 100;
+            const startY = Math.random() * 30;
+            
+            shootingStar.style.left = `${startX}%`;
+            shootingStar.style.top = `${startY}%`;
+            
+            nightSky.appendChild(shootingStar);
+            
+            const angle = Math.random() * 30 + 15;
+            const distance = 70 + Math.random() * 80;
+            
+            const animation = shootingStar.animate([
+                { transform: 'rotate(0deg) translateX(0)', opacity: 0 },
+                { transform: `rotate(${angle}deg) translateX(${distance}px)`, opacity: 1 },
+                { transform: `rotate(${angle}deg) translateX(${distance * 2}px)`, opacity: 0 }
+            ], {
+                duration: 1500, // Slower animation
+                easing: 'cubic-bezier(0.1, 0, 0.2, 1)'
+            });
+            
+            animation.onfinish = () => {
+                shootingStar.remove();
+            };
+            
+            // Create a small comet-like head
+            const head = document.createElement('div');
+            head.style.position = 'absolute';
+            head.style.width = '6px';
+            head.style.height = '6px';
+            head.style.background = 'white';
+            head.style.borderRadius = '50%';
+            head.style.filter = 'blur(1px) drop-shadow(0 0 5px white)';
+            head.style.left = '0';
+            head.style.top = '-2px';
+            shootingStar.appendChild(head);
+            
+            // Random delay before next shooting star (3-20 seconds)
+            setTimeout(createShootingStar, 3000 + Math.random() * 17000);
+        }
+        
+        // Start the shooting star animation after initial delay
+        setTimeout(createShootingStar, 2000);
+        
+        // Add occasional bright flashes
+        function createFlash() {
+            const flash = document.createElement('div');
+            flash.style.position = 'fixed';
+            flash.style.width = '100%';
+            flash.style.height = '100%';
+            flash.style.background = 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)';
+            flash.style.opacity = '0';
+            flash.style.pointerEvents = 'none';
+            flash.style.zIndex = '0';
+            
+            document.body.appendChild(flash);
+            
+            const animation = flash.animate([
+                { opacity: 0 },
+                { opacity: 0.3 },
+                { opacity: 0 }
+            ], {
+                duration: 2000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => {
+                flash.remove();
+            };
+            
+            setTimeout(createFlash, 10000 + Math.random() * 30000);
+        }
+        
+        setTimeout(createFlash, 5000);
+    </script>
 </body>
 </html>
