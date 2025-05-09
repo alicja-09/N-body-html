@@ -77,16 +77,9 @@
 <body>
     <div id="container">
         <div id="info">
-    <h2>3D N-Body Problem Simulation</h2>
-    <p>Adjust the parameters below to change the simulation.</p>
-https://github.com/alicja-09/n-body-html/blob/main/fields.html
-            <div style="margin-top: 10px;">
-        <a href="javascript:startSimulation(1);" class="simulation-link">Symulacja 1 (3 ciała)</a> |
-        <a href="javascript:startSimulation(2);" class="simulation-link">Symulacja 2 (5 ciał)</a> |
-        <a href="javascript:startSimulation(3);" class="simulation-link">Symulacja 3 (losowe)</a>
-    </div>
-</div>
-     
+            <h2>3D N-Body Problem Simulation</h2>
+            <p>Adjust the parameters below to change the simulation.</p>
+        </div>
         <div id="controls">
             <div id="body-count-control">
                 <div>
@@ -110,15 +103,7 @@ https://github.com/alicja-09/n-body-html/blob/main/fields.html
                     <input type="range" id="trailLength" min="0" max="1000" value="500">
                     <span class="value-display" id="trailLength-value">500</span>
                 </div>
-               
-    <div style="margin-top: 15px; border-top: 1px solid #444; padding-top: 10px;">
-        <h3>Przykładowe symulacje:</h3>
-        <a href="javascript:setBodyCount(3); resetSimulation();" class="simulation-link">3 ciała (trójkąt)</a><br>
-        <a href="javascript:setBodyCount(5); randomizePositions();" class="simulation-link">5 ciał (losowe)</a><br>
-        <a href="javascript:setBodyCount(10); randomizePositions();" class="simulation-link">10 ciał (chaos)</a>
-    </div>
-</div>
-
+            </div>
             
             <div id="body-controls-container">
                 <!-- Dynamic body controls will be inserted here -->
