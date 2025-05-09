@@ -11,6 +11,6 @@ Figure-8 orbit (1990s): Three equal masses follow a stable figure-8 path (discov
 Periodic orbits: Infinitely many unstable periodic solutions exist, but they require fine-tuned initial conditions.
 
 N-body movement simulator:
-- text fields: https://github.com/alicja-09/n-body-html/blob/main/fields.html
+- text fields: [https://github.com/alicja-09/n-body-html/blob/main/fields.html](https://github.com/alicja-09/n-body-html/blob/main/index.html)
   
 - sliders: https://github.com/alicja-09/n-body-html/blob/main/sliders.html
