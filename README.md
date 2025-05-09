@@ -17,3 +17,5 @@ N-body movement simulator:
 - text fields: [https://alicja-09.github.io/text-fields/](https://alicja-09.github.io/text-fields/)
   
 - sliders: [https://alicja-09.github.io/sliders/](https://alicja-09.github.io/sliders/)
+
+- [figure-8 orbit](https://github.com/alicja-09/N-body-html/blob/main/figure-8%20orbit.gif)
