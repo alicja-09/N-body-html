@@ -1,4 +1,4 @@
-# n-body-html
+# N-body-html
 The N-body problem is a classical problem in physics and celestial mechanics that involves predicting the individual motions of a group of celestial bodies (such as stars, planets, or galaxies) interacting with each other gravitationally.
 
 The N-body problem has no general closed-form analytical solution for N ≥ 3, meaning we cannot write down a simple equation that predicts the exact motions of all bodies indefinitely. However, depending on the context, we can find approximate, numerical, or special-case solutions.
