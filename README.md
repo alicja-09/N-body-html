@@ -16,4 +16,4 @@ A few exact solutions exist under strict conditions:
 N-body movement simulator:
 - text fields: [https://alicja-09.github.io/text-fields/](https://alicja-09.github.io/text-fields/)
   
-- sliders: [https://alicja-09.github.io/sliders/](https://alicja-09.github.io/sliders/)
+- sliders: [https://github.com/alicja-09/N-body-html/blob/main/sliders/index.html](https://github.com/alicja-09/N-body-html/blob/main/sliders/index.html)
