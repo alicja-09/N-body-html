@@ -5,10 +5,13 @@ The N-body problem has no general closed-form analytical solution for N ≥ 3, m
 
 A few exact solutions exist under strict conditions:
 
-Euler’s collinear solutions (1767): Three bodies move in a straight line.
-Lagrange’s equilateral solutions (1772): Three bodies form a rotating equilateral triangle (e.g., Trojan asteroids).
-Figure-8 orbit (1990s): Three equal masses follow a stable figure-8 path (discovered numerically).
-Periodic orbits: Infinitely many unstable periodic solutions exist, but they require fine-tuned initial conditions.
+**Euler’s collinear solutions (1767):** Three bodies move in a straight line.
+
+**Lagrange’s equilateral solutions (1772):** Three bodies form a rotating equilateral triangle (e.g., Trojan asteroids).
+
+**Figure-8 orbit (1990s):** Three equal masses follow a stable figure-8 path (discovered numerically).
+
+**Periodic orbits:** Infinitely many unstable periodic solutions exist, but they require fine-tuned initial conditions.
 
 N-body movement simulator:
 - text fields: [https://alicja-09.github.io/text-fields/](https://alicja-09.github.io/text-fields/)
