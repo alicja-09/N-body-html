@@ -13,4 +13,4 @@ Periodic orbits: Infinitely many unstable periodic solutions exist, but they req
 N-body movement simulator:
 - text fields: [https://github.com/alicja-09/n-body-html/blob/main/fields.html](https://github.com/alicja-09/n-body-html/blob/main/index.html)
   
-- sliders: https://github.com/alicja-09/n-body-html/blob/main/sliders.html
+- sliders: [https://github.com/alicja-09/n-body-html/blob/main/sliders.html](https://github.com/alicja-09/n-body-html/blob/main/sliders.html)
